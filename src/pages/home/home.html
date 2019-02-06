@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>ポーカー</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+  
+<div *ngIf="startDisable">   
+  <ion-card class="handtrump">
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label>1</ion-label>
+    </ion-item>
+    <ion-card-content>
+   ♠
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<div *ngIf="startDisable"> 
+  <ion-card class="handtrump">
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label>2</ion-label>
+    </ion-item>
+    <ion-card-content>
+     💖💖
+    </ion-card-content>
+  </ion-card>
+</div>
+
+  <div *ngIf="initCounter>1">
+  <ion-card class="trump" >
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>3</ion-label>
+      </ion-item>
+      <ion-card-content>
+     ♧♧♧
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="initCounter>1">
+    <ion-card class="trump">
+        <ion-item>
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label>4</ion-label>
+        </ion-item>
+        <ion-card-content>
+      ♦♦♦♦
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div *ngIf="initCounter>1">
+        <ion-card class="trump">
+            <ion-item>
+              <ion-icon name="pin" slot="start"></ion-icon>
+              <ion-label>5</ion-label>
+            </ion-item>
+            <ion-card-content>
+          ♦♦♦♦♦
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+        <div *ngIf="initCounter>2">
+            <ion-card class="trump">
+                <ion-item>
+                  <ion-icon name="pin" slot="start"></ion-icon>
+                  <ion-label>6</ion-label>
+                </ion-item>
+                <ion-card-content>
+              ♦♦♦♦♦♦
+                </ion-card-content>
+              </ion-card>
+            </div>
+            
+            <div *ngIf="initCounter>3">
+                <ion-card class="trump">
+                    <ion-item>
+                      <ion-icon name="pin" slot="start"></ion-icon>
+                      <ion-label>7</ion-label>
+                    </ion-item>
+                    <ion-card-content>
+                  ♦♦♦♦♦♦♦
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+</ion-row>
+</ion-grid>
+
+<button ion-button (click)="getcard()">start</button>
+
+<button ion-button (click)="set()" *ngIf="initCounter">カード</button>
+<button ion-button (click)="drow()" *ngIf="initCounter>1">カード</button>
+</ion-content>
