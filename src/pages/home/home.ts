@@ -6,57 +6,60 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  startDisable:boolean = false;
-  initCounter:number = 0;
+  startDisable: boolean = false;
+  initCounter: number = 0;
   trump: Array<any> = [];
-  
+
 
   constructor(public navCtrl: NavController) {
 
   }
 
-  getcard(){
-    this.startDisable =! this.startDisable;
+  getCard() {
+    this.startDisable = !this.startDisable;
     this.initCounter = 1;
 
   }
 
-  set(){
+  set() {
     this.initCounter = 2;
   }
 
-  drow(){
+  drow() {
     this.initCounter++;
   }
 
 
-  cardset(){
+  setCard() {
     this.json('♦');
     this.json('♥');
     this.json('♧');
     this.json('♠');
-    console.log("数字" + this.trump[39].number);
-    console.log("記号" + this.trump[39].mark);
   }
- 
-  json(mark){
-    for(var i = 1; i < 11; i++){
-      for(var j = mark; j.length < i ; j += mark);
-       let addData = {
-        "number": i,
-        "mark": j
+
+  json(mark) {
+    for (var i = 1; i < 14; i++) {
+      var n: string;
+
+      if (i == 11) { n = "J" }
+      else if (i == 12) { n = "Q" }
+      else if (i == 13) { n = "K" }
+      else { n = String(i)}
+
+      let addData = {
+        "number": n + mark
       }
       this.trump.push(addData);
     }
   }
 
-  random(){
-    
+  random() {
+
   }
 
-  
- 
-  
+
+
+
 
 }
 

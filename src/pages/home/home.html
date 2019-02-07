@@ -12,10 +12,10 @@
   <ion-card class="handtrump">
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label>{{trump[22].number}}</ion-label>
+      <ion-label>{{trump[0].number}}</ion-label>
     </ion-item>
     <ion-card-content>
-      {{trump[22].mark}}
+      
     </ion-card-content>
   </ion-card>
 </div>
@@ -24,10 +24,10 @@
   <ion-card class="handtrump">
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label>{{trump[14].number}}</ion-label>
+      <ion-label>{{trump[26].number}}</ion-label>
     </ion-item>
     <ion-card-content>
-      {{trump[14].mark}}
+ 
     </ion-card-content>
   </ion-card>
 </div>
@@ -92,9 +92,8 @@
 </ion-row>
 </ion-grid>
 
-<button ion-button (click)="cardset()">reset</button>
-<button ion-button (click)="getcard()">start</button>
-
+<button ion-button (click)="setCard()">reset</button>
+<button ion-button (click)="getCard()">start</button>
 <button ion-button (click)="set()" *ngIf="initCounter">カード</button>
 <button ion-button (click)="drow()" *ngIf="initCounter>1">カード</button>
 </ion-content>
