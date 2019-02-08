@@ -4,8 +4,9 @@ page-home {
         height: 30vh;
         width: 20vh;
         padding: 5px;
-        margin-top:300px;
+        // margin-top:300px;
         text-align: center; 
+        float: left;
     }
     .trump{
         height: 30vh;
@@ -13,6 +14,9 @@ page-home {
         padding: 5px;
         margin:10px;
         text-align: center; 
+    }
+    .hand{
+        float: left;
     }
 
   

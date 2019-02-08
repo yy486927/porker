@@ -7,93 +7,41 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-  
-<div *ngIf="startDisable">   
-  <ion-card class="handtrump">
-    <ion-item>
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label>{{trump[0].number}}</ion-label>
-    </ion-item>
-    <ion-card-content>
-      
-    </ion-card-content>
-  </ion-card>
-</div>
 
-<div *ngIf="startDisable"> 
-  <ion-card class="handtrump">
-    <ion-item>
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label>{{trump[26].number}}</ion-label>
-    </ion-item>
-    <ion-card-content>
- 
-    </ion-card-content>
-  </ion-card>
-</div>
-
-  <div *ngIf="initCounter>1">
-  <ion-card class="trump" >
-      <ion-item>
-        <ion-icon name="pin" slot="start"></ion-icon>
-        <ion-label>3</ion-label>
-      </ion-item>
-      <ion-card-content>
-     ♧♧♧
-      </ion-card-content>
-    </ion-card>
-  </div>
-  <div *ngIf="initCounter>1">
-    <ion-card class="trump">
-        <ion-item>
-          <ion-icon name="pin" slot="start"></ion-icon>
-          <ion-label>4</ion-label>
-        </ion-item>
-        <ion-card-content>
-      ♦♦♦♦
-        </ion-card-content>
-      </ion-card>
-    </div>
-    <div *ngIf="initCounter>1">
-        <ion-card class="trump">
+      <div *ngIf="startDisable">
+        <div *ngFor="let item of hand" class="hand">
+          <ion-card class="handtrump">
             <ion-item>
               <ion-icon name="pin" slot="start"></ion-icon>
-              <ion-label>5</ion-label>
+              <ion-label>{{trump[item].number}}</ion-label>
             </ion-item>
             <ion-card-content>
-          ♦♦♦♦♦
             </ion-card-content>
           </ion-card>
         </div>
+      </div>
+    </ion-row>
 
-        <div *ngIf="initCounter>2">
-            <ion-card class="trump">
-                <ion-item>
-                  <ion-icon name="pin" slot="start"></ion-icon>
-                  <ion-label>6</ion-label>
-                </ion-item>
-                <ion-card-content>
-              ♦♦♦♦♦♦
-                </ion-card-content>
-              </ion-card>
-            </div>
-            
-            <div *ngIf="initCounter>3">
-                <ion-card class="trump">
-                    <ion-item>
-                      <ion-icon name="pin" slot="start"></ion-icon>
-                      <ion-label>7</ion-label>
-                    </ion-item>
-                    <ion-card-content>
-                  ♦♦♦♦♦♦♦
-                    </ion-card-content>
-                  </ion-card>
-                </div>
-</ion-row>
-</ion-grid>
+    <ion-row>
+      <div *ngIf="initCounter>1">
+          <div *ngFor="let item of field" class="hand">
+        <ion-card class="trump">
+          <ion-item>
+            <ion-icon name="pin" slot="start"></ion-icon>
+            <ion-label>{{trump[item].number}}</ion-label>
+          </ion-item>
+          <ion-card-content>
+          </ion-card-content>
+        </ion-card>
+        </div>
+      </div>
 
-<button ion-button (click)="setCard()">reset</button>
-<button ion-button (click)="getCard()">start</button>
-<button ion-button (click)="set()" *ngIf="initCounter">カード</button>
-<button ion-button (click)="drow()" *ngIf="initCounter>1">カード</button>
+    </ion-row>
+  </ion-grid>
+  
+  <button ion-button (click)="random()">random</button>
+  <button ion-button (click)="setCard()">reset</button>
+  <button ion-button (click)="getCard()">start</button>
+  <button ion-button (click)="set()" *ngIf="initCounter">カード</button>
+  <button ion-button (click)="drow()" *ngIf="initCounter>2">カード2</button>
 </ion-content>
